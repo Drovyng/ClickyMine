@@ -1,0 +1,27 @@
+id | IsMain | Blocks (or Biomes if main) | Count Minimum | Count Maximum (Inclusive) | Ok, instruction is done.
+
+
+
+
+overworld | true | plains, forest | 1 | 2
+
+
+plains | false | short-grass, grass, dirt, sand, gravel | 50 | 75
+forest | false | short-grass, grass, dirt, oak-log, birch-log | 50 | 75
+
+
+
+
+caves | true | cave, deepslate-cave, lush-cave | 2 | 3
+
+
+cave | false | stone, cobblestone, coal-ore, copper-ore, iron-ore, gold-ore, redstone-ore, lapis-ore, diamond-ore, emerald-ore | 50 | 75
+deepslate-cave | false | deepslate, cobbled-deepslate, deepslate-coal-ore, deepslate-copper-ore, deepslate-iron-ore, deepslate-gold-ore, deepslate-redstone-ore, deepslate-lapis-ore, deepslate-diamond-ore, deepslate-emerald-ore | 25 | 45
+lush-cave | false | moss, dripstone, andesite, diorite, granite, clay, oak-log, oak-log, deepslate | 45 | 90
+
+
+
+#NOT DONE!!!| nether | true | bastion, fortress, nether-wastes, basalt-deltas, soul-sand-valley, warped-forest, crimson-forest | 3 | 5
+
+
+

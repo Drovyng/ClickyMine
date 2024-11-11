@@ -1,0 +1,117 @@
+# ENGLISH
+theme_name: ClickyMine
+
+inventory: Inventory
+
+block.grass: Grass Block
+block.short-grass: Short Grass
+block.dirt: Dirt
+block.sand: Sand
+block.gravel: Gravel
+
+block.oak-log: Oak Log
+block.birch-log: Birch Log
+
+block.dripstone: Dripstone Block
+block.moss: Moss Block
+block.andesite: Andesite
+block.diorite: Diorite
+block.granite: Granite
+block.clay: Clay
+
+block.stone: Stone
+block.cobblestone: Cobblestone
+
+block.copper-ore: Copper Ore
+block.coal-ore: Coal Ore
+block.iron-ore: Iron Ore
+block.lapis-ore: Lapis Ore
+block.gold-ore: Gold Ore
+block.redstone-ore: Redstone Ore
+block.diamond-ore: Diamond Ore
+block.emerald-ore: Emerald Ore
+
+block.deepslate: Deepslate
+block.cobbled-deepslate: Cobbled Deepslate
+
+block.deepslate-copper-ore: Deepslate Copper Ore
+block.deepslate-coal-ore: Deepslate Coal Ore
+block.deepslate-iron-ore: Deepslate Iron Ore
+block.deepslate-lapis-ore: Deepslate Lapis Ore
+block.deepslate-gold-ore: Deepslate Gold Ore
+block.deepslate-redstone-ore: Deepslate Redstone Ore
+block.deepslate-diamond-ore: Deepslate Diamond Ore
+block.deepslate-emerald-ore: Deepslate Emerald Ore
+
+
+biome.plains: Plains
+biome.forest: Forest
+biome.cave: Cave
+biome.deepslate-cave: Deepslate Cave
+biome.lush-cave: Lush Cave
+
+
+settings.text-top: Settings
+settings.text-lang: Language
+
+settings.btn-lang: EN
+settings.btn-back: Back
+
+
+
+# RUSSIAN
+inventory: Инвентарь
+
+block.grass: Дёрн
+block.short-grass: Трава
+block.dirt: Земля
+block.sand: Песок
+block.gravel: Гравий
+
+block.oak-log: Дубовое Бревно
+block.birch-log: Берёзовое Бревно
+
+block.dripstone: Капельиковый Блок
+block.moss: Млок Мха
+block.andesite: Андезит
+block.diorite: Диорит
+block.granite: Гранит
+block.clay: Глина
+
+block.stone: Камень
+block.cobblestone: Булыжник
+
+block.copper-ore: Медная Руда
+block.coal-ore: Угольная Руда
+block.iron-ore: Железная Руда
+block.lapis-ore: Лазуритовая Руда
+block.gold-ore: Золотая Руда
+block.redstone-ore: Редстоуновая Руда
+block.diamond-ore: Алмазная Руда
+block.emerald-ore: Изумрудная Руда
+
+block.deepslate: Глубинный Сланец
+block.cobbled-deepslate: Колотый Глубинный Сланец
+
+block.deepslate-copper-ore: Глубинная Медная Руда
+block.deepslate-coal-ore: Глубинная Угольная Руда
+block.deepslate-iron-ore: Глубинная Железная Руда
+block.deepslate-lapis-ore: Глубинная Лазуритовая Руда
+block.deepslate-gold-ore: Глубинная Золотая Руда
+block.deepslate-redstone-ore: Глубинная Редстоуновая Руда
+block.deepslate-diamond-ore: Глубинная Алмазная Руда
+block.deepslate-emerald-ore: Глубинная Изумрудная Руда
+
+
+biome.plains: Равнины
+biome.forest: Лес
+biome.cave: Пещера
+biome.deepslate-cave: Глубинная Пещера
+biome.lush-cave: Пышная Пещера
+
+
+settings.text-top: Настройки
+settings.text-lang: Язык
+
+settings.btn-lang: RU
+settings.btn-back: Назад

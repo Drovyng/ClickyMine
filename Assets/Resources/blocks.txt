@@ -1,0 +1,53 @@
+[id] | [health] | [rarity] | [sounds touch] | [touch pitch] | [sounds break] | [break pitch] | Sounds separate with ","
+write "(NO)" in [id] if want to disable outline
+
+
+grass | 11 | 100 | grass_1, grass_2, grass_3, grass_4, grass_5, grass_6 | 0.5 | grass_1, grass_2, grass_3, grass_4 | 0.8
+short-grass (NO) | 1 | 50 | grass_1 | 0.5 | grass_1, grass_2, grass_3, grass_4 | 0.8
+dirt | 9 | 100 | gravel_1, gravel_2, gravel_3, gravel_4 | 1 | gravel_1, gravel_2, gravel_3, gravel_4 | 0.8
+
+gravel | 7 | 75 | gravel_1, gravel_2, gravel_3, gravel_4 | 1 | gravel_1, gravel_2, gravel_3, gravel_4 | 0.8
+sand | 7 | 75 | sand_1, sand_2, sand_3, sand_4, sand_5 | 1 | sand_1, sand_2 | 0.8
+
+oak-log | 10 | 150 | wood_1, wood_2, wood_3, wood_4, wood_5, wood_6 | 1 | wood_1, wood_2, wood_3, wood_4 | 0.8
+birch-log | 10 | 80 | wood_1, wood_2, wood_3, wood_4, wood_5, wood_6 | 1 | wood_1, wood_2, wood_3, wood_4 | 0.8
+
+
+
+andesite | 7 | 150 | stone_1, stone_2, stone_3, stone_4, stone_5, stone_6 | 1 | stone_1, stone_2, stone_3, stone_4 | 0.8
+diorite | 7 | 150 | stone_1, stone_2, stone_3, stone_4, stone_5, stone_6 | 1 | stone_1, stone_2, stone_3, stone_4 | 0.8
+granite | 7 | 150 | stone_1, stone_2, stone_3, stone_4, stone_5, stone_6 | 1 | stone_1, stone_2, stone_3, stone_4 | 0.8
+
+clay | 6 | 200 |  gravel_1, gravel_2, gravel_3, gravel_4 | 1 | gravel_1, gravel_2, gravel_3, gravel_4 | 0.8
+moss | 5 | 250 | moss_1, moss_2, moss_3, moss_4, moss_5, moss_6 | 1 | moss_1, moss_2, moss_3, moss_4, moss_5 | 0.8
+dripstone | 9 | 250 | deepslate_1, deepslate_2, deepslate_3, deepslate_4, deepslate_5, deepslate_6 | 1 | deepslate_1, deepslate_2, deepslate_3, deepslate_4 | 0.8
+
+
+
+stone | 8 | 300 | stone_1, stone_2, stone_3, stone_4, stone_5, stone_6 | 1 | stone_1, stone_2, stone_3, stone_4 | 0.8
+cobblestone | 10 | 150 | stone_1, stone_2, stone_3, stone_4, stone_5, stone_6 | 1 | stone_1, stone_2, stone_3, stone_4 | 0.8
+
+copper-ore   | 11 | 75 | stone_1, stone_2, stone_3, stone_4, stone_5, stone_6 | 1 | stone_1, stone_2, stone_3, stone_4 | 0.8
+coal-ore     | 11 | 50 | stone_1, stone_2, stone_3, stone_4, stone_5, stone_6 | 1 | stone_1, stone_2, stone_3, stone_4 | 0.8
+iron-ore     | 11 | 50 | stone_1, stone_2, stone_3, stone_4, stone_5, stone_6 | 1 | stone_1, stone_2, stone_3, stone_4 | 0.8
+lapis-ore    | 11 | 50 | stone_1, stone_2, stone_3, stone_4, stone_5, stone_6 | 1 | stone_1, stone_2, stone_3, stone_4 | 0.8
+gold-ore     | 13 | 40 | stone_1, stone_2, stone_3, stone_4, stone_5, stone_6 | 1 | stone_1, stone_2, stone_3, stone_4 | 0.8
+redstone-ore | 11 | 40 | stone_1, stone_2, stone_3, stone_4, stone_5, stone_6 | 1 | stone_1, stone_2, stone_3, stone_4 | 0.8
+diamond-ore  | 13 | 30 | stone_1, stone_2, stone_3, stone_4, stone_5, stone_6 | 1 | stone_1, stone_2, stone_3, stone_4 | 0.8
+emerald-ore  | 15 | 4  | stone_1, stone_2, stone_3, stone_4, stone_5, stone_6 | 1 | stone_1, stone_2, stone_3, stone_4 | 0.8
+
+
+
+deepslate | 13 | 300 | deepslate_1, deepslate_2, deepslate_3, deepslate_4, deepslate_5, deepslate_6 | 1 | deepslate_1, deepslate_2, deepslate_3, deepslate_4 | 0.8
+cobbled-deepslate | 16 | 150 | deepslate_1, deepslate_2, deepslate_3, deepslate_4, deepslate_5, deepslate_6 | 1 | deepslate_1, deepslate_2, deepslate_3, deepslate_4 | 0.8
+
+deepslate-copper-ore   | 18 | 15 | deepslate_1, deepslate_2, deepslate_3, deepslate_4, deepslate_5, deepslate_6 | 1 | deepslate_1, deepslate_2, deepslate_3, deepslate_4 | 0.8
+deepslate-coal-ore     | 18 | 10 | deepslate_1, deepslate_2, deepslate_3, deepslate_4, deepslate_5, deepslate_6 | 1 | deepslate_1, deepslate_2, deepslate_3, deepslate_4 | 0.8
+deepslate-iron-ore     | 18 | 55 | deepslate_1, deepslate_2, deepslate_3, deepslate_4, deepslate_5, deepslate_6 | 1 | deepslate_1, deepslate_2, deepslate_3, deepslate_4 | 0.8
+deepslate-lapis-ore    | 18 | 45 | deepslate_1, deepslate_2, deepslate_3, deepslate_4, deepslate_5, deepslate_6 | 1 | deepslate_1, deepslate_2, deepslate_3, deepslate_4 | 0.8
+deepslate-gold-ore     | 20 | 60 | deepslate_1, deepslate_2, deepslate_3, deepslate_4, deepslate_5, deepslate_6 | 1 | deepslate_1, deepslate_2, deepslate_3, deepslate_4 | 0.8
+deepslate-redstone-ore | 18 | 65 | deepslate_1, deepslate_2, deepslate_3, deepslate_4, deepslate_5, deepslate_6 | 1 | deepslate_1, deepslate_2, deepslate_3, deepslate_4 | 0.8
+deepslate-diamond-ore  | 20 | 40 | deepslate_1, deepslate_2, deepslate_3, deepslate_4, deepslate_5, deepslate_6 | 1 | deepslate_1, deepslate_2, deepslate_3, deepslate_4 | 0.8
+deepslate-emerald-ore  | 22 | 2  | deepslate_1, deepslate_2, deepslate_3, deepslate_4, deepslate_5, deepslate_6 | 1 | deepslate_1, deepslate_2, deepslate_3, deepslate_4 | 0.8
+
+obsidian  | 25 | 35 | stone_1, stone_2, stone_3, stone_4, stone_5, stone_6 | 1 | stone_1, stone_2, stone_3, stone_4 | 0.8

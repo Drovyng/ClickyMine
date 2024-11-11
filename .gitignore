@@ -1,0 +1,9 @@
+Assembly-CSharp.csproj.user
+BUILDS/
+.vs/
+Logs/
+obj/
+Temp/
+UserSettings/
+.vsconfig
+Library/
