@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(AudioListener))]
 public class Game : MonoBehaviour
@@ -53,11 +54,13 @@ public class Game : MonoBehaviour
             return;
         }
         _damageTimer = DamageTimer;
+        Score_Text.Click();
         Blocks.CurrentBlockHealth -= 1;
         if (Blocks.CurrentBlockHealth <= 0)
         {
             ParticlesGenerator.BlockBreak(Blocks.CurrentBlock.id);
             PlaySound("b_" + Blocks.CurrentBlock.soundsBreak[Random.Range(0, Blocks.CurrentBlock.soundsBreak.Length)], Blocks.CurrentBlock.soundBreakPitch);
+
             Config.Instance.BiomeSubCount--;
             if (Config.Instance.BiomeSubCount <= 0)
             {
@@ -73,7 +76,6 @@ public class Game : MonoBehaviour
         }
         ParticlesGenerator.BlockTouch(Blocks.CurrentBlock.id);
         PlaySound("t_" + Blocks.CurrentBlock.soundsTouch[Random.Range(0, Blocks.CurrentBlock.soundsTouch.Length)], Blocks.CurrentBlock.soundTouchPitch, 0.25f);
-
         Block_Health.target = Blocks.CurrentBlockHealth / (float)Blocks.CurrentBlock.health;
     }
     private void FixedUpdate()

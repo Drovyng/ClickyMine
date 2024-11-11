@@ -17,7 +17,8 @@ public class Config
     public string BiomeSubLast = "plains";
     public int BiomeSubCount = 50;
 
-    public string Items;
+    public string Items = "";
+    public ulong Clicks = 0;
 
     private static Config Load()
     {
