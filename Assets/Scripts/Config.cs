@@ -20,6 +20,9 @@ public class Config
     public string Items = "";
     public ulong Clicks = 0;
 
+    public float music = 0.5f;
+    public float sound = 1;
+
     private static Config Load()
     {
         if (PlayerPrefs.HasKey("Config"))

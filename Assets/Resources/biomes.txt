@@ -1,6 +1,7 @@
 id | IsMain | Blocks (or Biomes if main) | Count Minimum | Count Maximum (Inclusive) | Ok, instruction is done.
 
 
+-------------------------- O V E R W O R L D ----------------------------
 
 
 overworld | true | plains, forest | 1 | 2
@@ -10,18 +11,26 @@ plains | false | short-grass, grass, dirt, sand, gravel | 50 | 75
 forest | false | short-grass, grass, dirt, oak-log, birch-log | 50 | 75
 
 
+------------------------------ C A V E S --------------------------------
 
 
 caves | true | cave, deepslate-cave, lush-cave | 2 | 3
 
 
 cave | false | stone, cobblestone, coal-ore, copper-ore, iron-ore, gold-ore, redstone-ore, lapis-ore, diamond-ore, emerald-ore | 50 | 75
-deepslate-cave | false | deepslate, cobbled-deepslate, deepslate-coal-ore, deepslate-copper-ore, deepslate-iron-ore, deepslate-gold-ore, deepslate-redstone-ore, deepslate-lapis-ore, deepslate-diamond-ore, deepslate-emerald-ore | 25 | 45
+deepslate-cave | false | obsidian, deepslate, cobbled-deepslate, deepslate-coal-ore, deepslate-copper-ore, deepslate-iron-ore, deepslate-gold-ore, deepslate-redstone-ore, deepslate-lapis-ore, deepslate-diamond-ore, deepslate-emerald-ore | 25 | 45
 lush-cave | false | moss, dripstone, andesite, diorite, granite, clay, oak-log, oak-log, deepslate | 45 | 90
 
 
+----------------------------- N E T H E R -------------------------------
 
-#NOT DONE!!!| nether | true | bastion, fortress, nether-wastes, basalt-deltas, soul-sand-valley, warped-forest, crimson-forest | 3 | 5
+                bastion, fortress,
+nether | true |                    nether-wastes, basalt-deltas, soul-sand-valley, warped-forest, crimson-forest | 3 | 5
 
 
+nether-wastes | false | ancient-debris, obsidian, netherrack, glowstone, quartz-ore, nether-gold-ore, gravel | 50 | 75
+basalt-deltas | false | basalt, obsidian, blackstone, glowstone, quartz-ore, gilded-blackstone, gravel | 50 | 75
+soul-sand-valley | false | ancient-debris, soul-sand, soul-soil, obsidian, glowstone, quartz-ore, nether-gold-ore, gravel | 60 | 85
+warped-forest | false | ancient-debris, warped-nylium, netherrack, obsidian, glowstone, quartz-ore, nether-gold-ore, warped-stem, warped-fungus, warped-roots | 50 | 75
+crimson-forest | false | ancient-debris, crimson-nylium, netherrack, obsidian, glowstone, quartz-ore, nether-gold-ore, crimson-stem, crimson-fungus, crimson-roots | 50 | 75
 

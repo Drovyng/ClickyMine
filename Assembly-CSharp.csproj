@@ -65,6 +65,7 @@
     <Compile Include="Assets\Scripts\Biomes.cs" />
     <Compile Include="Assets\Scripts\BiomeData.cs" />
     <Compile Include="Assets\Scripts\GUI\Score_Text.cs" />
+    <Compile Include="Assets\Scripts\GUI\CheckUpdates.cs" />
     <Compile Include="Assets\Scripts\GUI\Particle.cs" />
     <Compile Include="Assets\Scripts\GUI\Settings.cs" />
     <Compile Include="Assets\Scripts\GUI\Block_Animator.cs" />

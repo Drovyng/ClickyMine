@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -9,7 +8,7 @@ public class Inventory : MonoBehaviour
     public static Dictionary<string, long> Items = new(1);
     public List<Slot> Slots = new(1);
     [SerializeField] private GameObject SlotPrefab;
-    [SerializeField] private Transform Parent;
+    [SerializeField] private RectTransform Parent;
     [SerializeField] private Text _inventoryText;
     public static void Load()
     {
@@ -45,14 +44,16 @@ public class Inventory : MonoBehaviour
     {
         var cur = Slots.Count;
         var slotObj = Instantiate(SlotPrefab, Parent);
-
         slotObj.transform.localPosition += new Vector3(
             (cur % 3 - 1) * STEP_X,
             cur / 3 * STEP_Y,
             0
         );
-
         Slots.Add(slotObj.GetComponent<Slot>());
+
+        var size = Parent.sizeDelta;
+        size.y = 600 - STEP_Y * (cur / 3);
+        Parent.sizeDelta = size;
     }
     private void Reload()
     {
@@ -67,6 +68,7 @@ public class Inventory : MonoBehaviour
         {
             Slots[i].SetItem(sorted[i].Key, sorted[i].Value);
         }
+        Parent.anchoredPosition = Vector2.zero;
     }
 
     public static float TargetScale = 0;

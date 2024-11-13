@@ -50,4 +50,36 @@ deepslate-redstone-ore | 18 | 65 | deepslate_1, deepslate_2, deepslate_3, deepsl
 deepslate-diamond-ore  | 20 | 40 | deepslate_1, deepslate_2, deepslate_3, deepslate_4, deepslate_5, deepslate_6 | 1 | deepslate_1, deepslate_2, deepslate_3, deepslate_4 | 0.8
 deepslate-emerald-ore  | 22 | 2  | deepslate_1, deepslate_2, deepslate_3, deepslate_4, deepslate_5, deepslate_6 | 1 | deepslate_1, deepslate_2, deepslate_3, deepslate_4 | 0.8
 
-obsidian  | 25 | 35 | stone_1, stone_2, stone_3, stone_4, stone_5, stone_6 | 1 | stone_1, stone_2, stone_3, stone_4 | 0.8
+
+
+ancient-debris   | 50 | 1  | basalt_1, basalt_2, basalt_3, basalt_4, basalt_5, basalt_6 | 1 | ancient-debris_1, ancient-debris_2, ancient-debris_3, ancient-debris_4, ancient-debris_5 | 0.8
+
+obsidian         | 25 | 10 | stone_1, stone_2, stone_3, stone_4, stone_5, stone_6 | 1 | stone_1, stone_2, stone_3, stone_4 | 0.8
+
+netherrack        | 6  | 300 | netherrack_1, netherrack_2, netherrack_3, netherrack_4, netherrack_5, netherrack_6 | 1 | netherrack_1, netherrack_2, netherrack_3, netherrack_4, netherrack_5, netherrack_6 | 0.8
+glowstone         | 8  | 100 | glass_1, glass_2, glass_3, glass_4, glass_5 | 1 | glass_1, glass_2, glass_3 | 0.8
+quartz-ore        | 10 | 75  | quartz-ore_1, quartz-ore_2, quartz-ore_3, quartz-ore_4, quartz-ore_5 | 1 | quartz-ore_1, quartz-ore_2, quartz-ore_3, quartz-ore_4 | 0.8
+nether-gold-ore   | 10 | 150 | quartz-ore_1, quartz-ore_2, quartz-ore_3, quartz-ore_4, quartz-ore_5 | 1 | quartz-ore_1, quartz-ore_2, quartz-ore_3, quartz-ore_4 | 0.8
+gilded-blackstone | 15 | 150 | quartz-ore_1, quartz-ore_2, quartz-ore_3, quartz-ore_4, quartz-ore_5 | 1 | quartz-ore_1, quartz-ore_2, quartz-ore_3, quartz-ore_4 | 0.8
+
+blackstone  | 11 | 300 | stone_1, stone_2, stone_3, stone_4, stone_5, stone_6 | 1 | stone_1, stone_2, stone_3, stone_4 | 0.8
+basalt      | 9  | 300 | basalt_1, basalt_2, basalt_3, basalt_4, basalt_5, basalt_6 | 1 | basalt_1, basalt_2, basalt_3, basalt_4, basalt_5 | 0.8
+
+
+soul-sand   | 7  | 300 | soul-sand_1, soul-sand_2, soul-sand_3, soul-sand_4, soul-sand_5 | 1 | soul-sand_1, soul-sand_2, soul-sand_3, soul-sand_4, soul-sand_5, soul-sand_6, soul-sand_7, soul-sand_8, soul-sand_9 | 0.8
+soul-soil   | 7  | 300 | soul-soil_1, soul-soil_2, soul-soil_3, soul-soil_4, soul-soil_5 | 1 | soul-soil_1, soul-soil_2, soul-soil_3, soul-soil_4, soul-soil_5, soul-soil_6 | 0.8
+
+
+warped-roots (NO)  | 3  | 30 | roots_1, roots_2, roots_3, roots_4, roots_5 | 1 | roots_1, roots_2, roots_3, roots_4, roots_5, roots_6 | 0.8
+crimson-roots (NO)  | 3  | 30 | roots_1, roots_2, roots_3, roots_4, roots_5 | 1 | roots_1, roots_2, roots_3, roots_4, roots_5, roots_6 | 0.8
+
+warped-fungus (NO)  | 1  | 30 | roots_1 | 1 | fungus_1, fungus_2, fungus_3, fungus_4, fungus_5, fungus_6 | 0.8
+crimson-fungus (NO)  | 1  | 30 | roots_1 | 1 | fungus_1, fungus_2, fungus_3, fungus_4, fungus_5, fungus_6 | 0.8
+
+warped-stem  | 10 | 100 | stem_1, stem_2, stem_3, stem_4, stem_5, stem_6 | 1 | stem_1, stem_2, stem_3, stem_4, stem_5, stem_6 | 0.8
+crimson-stem | 10 | 100 | stem_1, stem_2, stem_3, stem_4, stem_5, stem_6 | 1 | stem_1, stem_2, stem_3, stem_4, stem_5, stem_6 | 0.8
+
+warped-nylium  | 11 | 150 | nylium_1, nylium_2, nylium_3, nylium_4, nylium_5, nylium_6 | 1 | nylium_1, nylium_2, nylium_3, nylium_4, nylium_5, nylium_6 | 0.8
+crimson-nylium | 11 | 150 | nylium_1, nylium_2, nylium_3, nylium_4, nylium_5, nylium_6 | 1 | nylium_1, nylium_2, nylium_3, nylium_4, nylium_5, nylium_6 | 0.8
+
+

@@ -25,6 +25,8 @@ public static class Biomes
         }
         Config.Instance.BiomeMainLastList(lastList);
 
+        Game.Instance.PlayMusic(getted);
+
         NewSub();
     }
     public static void NewSub()

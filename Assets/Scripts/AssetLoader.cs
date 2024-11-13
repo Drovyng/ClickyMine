@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using static Utils;
@@ -10,6 +11,21 @@ public static class AssetLoader
     public static IReadOnlyDictionary<string, AudioClip> Sounds;
     public static IReadOnlyDictionary<string, BiomeData> BiomesMain;
     public static IReadOnlyDictionary<string, BiomeData> BiomesSub;
+    public static AudioClip Music;
+    public static void LoadMusic(string name)
+    {
+        if (Music != null)
+        {
+            Resources.UnloadAsset(Music);
+        }
+        Music = null;
+        var wait =  Resources.LoadAsync("Music/" + name, typeof(AudioClip));
+        wait.completed += (lol) =>
+        {
+            Music = wait.asset as AudioClip;
+        };
+    }
+
     public static void Init()
     {
         {

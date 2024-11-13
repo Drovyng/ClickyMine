@@ -44,19 +44,55 @@ block.deepslate-diamond-ore: Deepslate Diamond Ore
 block.deepslate-emerald-ore: Deepslate Emerald Ore
 
 
+block.netherrack: Netherrack
+block.blackstone: Blackstone
+block.basalt: Basalt
+block.soul-sand: Soul Sand
+block.soul-soil: Soul Soil
+block.obsidian: Obsidian
+block.glowstone: Glowstone
+block.quartz-ore: Nether Quartz Ore
+block.nether-gold-ore: Nether Gold Ore
+block.ancient-debris: Ancient Debris
+block.gilded-blackstone: Gilded Blackstone
+
+block.warped-roots: Warped Roots
+block.crimson-roots: Crimson Roots
+
+block.warped-stem: Warped Stem
+block.crimson-stem: Crimson Stem
+
+block.warped-fungus: Warped Fungus
+block.crimson-fungus: Crimson Fungus
+
+block.warped-nylium: Warped Nylium
+block.crimson-nylium: Crimson Nylium
+
+
+
 biome.plains: Plains
 biome.forest: Forest
 biome.cave: Cave
 biome.deepslate-cave: Deepslate Cave
 biome.lush-cave: Lush Cave
 
+biome.nether-wastes: Nether Wastes
+biome.basalt-deltas: Basalt Deltas
+biome.soul-sand-valley: Soul Sand Valley
+biome.warped-forest: Warped Forest
+biome.crimson-forest: Crimson Forest
 
 settings.text-top: Settings
 settings.text-lang: Language
+settings.text-music: Music
+settings.text-sound: SFX
 
 settings.btn-lang: EN
 settings.btn-back: Back
 
+outdated.title: New Version Is Avaible!
+outdated.update: Update
+outdated.skip: Skip
 
 
 # RUSSIAN
@@ -103,15 +139,55 @@ block.deepslate-diamond-ore: Глубинная Алмазная Руда
 block.deepslate-emerald-ore: Глубинная Изумрудная Руда
 
 
+
+block.netherrack: Незерак
+block.blackstone: Чернит
+block.basalt: Базальт
+block.soul-sand: Песок Душ
+block.soul-soil: Почва Душ
+block.obsidian: Обсидиан
+block.glowstone: Светокамень
+block.quartz-ore: Кварцевая Руда
+block.nether-gold-ore: Незерская Золотая Руда
+block.ancient-debris: Древние Обломки
+block.gilded-blackstone: Позолоченный Чернит
+
+block.warped-roots: Искажённые Корни
+block.crimson-roots: Багровые Корни
+
+block.warped-stem: Искажённый Стебель
+block.crimson-stem: Багровый Стебель
+
+block.warped-fungus: Искажённый Гриб
+block.crimson-fungus: Багровый Гриб
+
+block.warped-nylium: Искажённый Нилий
+block.crimson-nylium: Багровый Нилий
+
+
+
+
 biome.plains: Равнины
 biome.forest: Лес
 biome.cave: Пещера
 biome.deepslate-cave: Глубинная Пещера
 biome.lush-cave: Пышная Пещера
 
+biome.nether-wastes: Пустоши Незера
+biome.basalt-deltas: Базальтовые Дельты
+biome.soul-sand-valley: Долина Песка Душ
+biome.warped-forest: Искажённый Лес
+biome.crimson-forest: Багровый Лес
+
 
 settings.text-top: Настройки
 settings.text-lang: Язык
+settings.text-music: Музыка
+settings.text-sound: Звуки
 
 settings.btn-lang: RU
 settings.btn-back: Назад
+
+outdated.title: Доступна Новая Версия!
+outdated.update: Обновить
+outdated.skip: Пропустить
