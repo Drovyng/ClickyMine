@@ -21,7 +21,7 @@ public class Score_Text : MonoBehaviour
     }
     public static void Click()
     {
-        Instance._lerp += 0.15f;
+        Instance._lerp += 0.1f;
         Config.Instance.Clicks++;
         Instance._text.text = Config.Instance.Clicks.ToString();
     }

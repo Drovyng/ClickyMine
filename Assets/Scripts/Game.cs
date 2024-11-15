@@ -17,6 +17,27 @@ public class Game : MonoBehaviour
     public AudioSource musicSource;
     public float musicLerp;
 
+    public static void RecalcResources()
+    {
+        AssetLoader.ToLoadImages = new(1);
+        AssetLoader.ToLoadSounds = new(1);
+        foreach (var item in AssetLoader.BiomesSub[Config.Instance.BiomeSubCur].blocksOrBiomes)
+        {
+            AssetLoader.ToLoadImages.Add("b_" + item);
+            AssetLoader.ToLoadImages.Add("p_" + item);
+
+            var block = AssetLoader.Blocks[item];
+            foreach (var snd in block.soundsTouch)
+            {
+                AssetLoader.ToLoadSounds.Add("t_" + snd);
+            }
+            foreach (var snd in block.soundsBreak)
+            {
+                AssetLoader.ToLoadSounds.Add("b_" + snd);
+            }
+        }
+    }
+
     private void Awake()
     {
         musicSource = GetComponent<AudioSource>();
@@ -28,11 +49,14 @@ public class Game : MonoBehaviour
         {
             item.SetActive(true);
         }
+        AssetLoader.Init();
+        RecalcResources();
+        AssetLoader.HandleImages();
+        AssetLoader.HandleSounds();
 
         Inventory.Load();
         Config.Save();
         Localization.Init();
-        AssetLoader.Init();
 
         Blocks.Recalculate();
 
@@ -49,6 +73,7 @@ public class Game : MonoBehaviour
 #if UNITY_EDITOR
         foreach (var item in AssetLoader.Blocks.Values)
         {
+            /*
             if (!AssetLoader.Images.ContainsKey("b_" + item.id)) Debug.LogError("NO IMAGE: b_" + item.id);
             if (!AssetLoader.Images.ContainsKey("p_" + item.id)) Debug.LogError("NO IMAGE: p_" + item.id);
             foreach (var snd in item.soundsTouch)
@@ -59,6 +84,7 @@ public class Game : MonoBehaviour
             {
                 if (!AssetLoader.Sounds.ContainsKey("b_" + snd)) Debug.LogError("NO AUDIO: b_" + snd);
             }
+            */
             if (!Localization.Languages[Language.ENGLISH].ContainsKey("block." + item.id)) Debug.LogError("NO LANG [ENGLISH]: block." + item.id);
             if (!Localization.Languages[Language.RUSSIAN].ContainsKey("block." + item.id)) Debug.LogError("NO LANG [RUSSIAN]: block." + item.id);
         }
@@ -124,6 +150,7 @@ public class Game : MonoBehaviour
     }
     public void PlaySound(string name, float pitch = 1f, float volume = 1f)
     {
+        if (AssetLoader.Sounds == null) return;
         if (_audioSources.Count > 0)
         {
             var source = _audioSources[0];
@@ -135,7 +162,7 @@ public class Game : MonoBehaviour
     }
     public void PlayMusic(string name)
     {
-        StartCoroutine(PlayMusicE(name));
+        if ((int)(Config.Instance.music * 100) > 0) StartCoroutine(PlayMusicE(name));
     }
     private IEnumerator PlayMusicE(string name)
     {

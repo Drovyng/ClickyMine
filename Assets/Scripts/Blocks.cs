@@ -12,7 +12,7 @@ public static class Blocks
         CurrentBlockHealth = CurrentBlock.health;
         Block_Text.SetText(Localization.Localize("block." + CurrentBlock.id));
 
-        Block_Animator.Instance.SetSprite(AssetLoader.Images["b_"+CurrentBlock.id], CurrentBlock.outline);
+        Block_Animator.Instance.SetSprite(CurrentBlock.id, CurrentBlock.outline);
         Block_Health.target = 1;
     }
     public static void Recalculate()

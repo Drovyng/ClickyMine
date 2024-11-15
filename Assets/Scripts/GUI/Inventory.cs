@@ -59,7 +59,16 @@ public class Inventory : MonoBehaviour
     {
         _inventoryText.text = Localization.Localize("inventory");
         var sorted = Items.OrderBy((item) => -item.Value).ToList();
-        
+
+
+        var list = AssetLoader.ToLoadImages;
+        foreach (var item in Items)
+        {
+            list.Add("b_" + item.Key);
+        }
+        AssetLoader.HandleImages();
+        AssetLoader.ToLoadImages = list;
+
         while (Slots.Count < sorted.Count)
         {
             AddSlot();
@@ -73,9 +82,12 @@ public class Inventory : MonoBehaviour
 
     public static float TargetScale = 0;
     private float _currentScale = 0;
+    private ScrollRect _scrollRect;
 
     private void Start()
     {
+        _scrollRect = GetComponentInChildren<ScrollRect>();
+        _scrollRect.enabled = false;
         transform.localScale = Vector3.zero;
         Reload();
     }
@@ -89,7 +101,15 @@ public class Inventory : MonoBehaviour
         TargetScale = 1 - TargetScale;
         if (TargetScale > 0.5f)
         {
+            _scrollRect.enabled = true;
+            _scrollRect.velocity = Vector2.zero;
+            _scrollRect.verticalNormalizedPosition = 0;
             Reload();
+        }
+        else
+        {
+            _scrollRect.enabled = false;
+            AssetLoader.HandleImages();
         }
     }
 }

@@ -7,23 +7,12 @@ public static class Biomes
     public static void NewMain()
     {
         List<string> BiomesMain = AssetLoader.BiomesMain.Keys.ToList();
-        var lastList = Config.Instance.BiomeMainLastList();
-        foreach (var item in lastList)
-        {
-            if (BiomesMain.Contains(item)) BiomesMain.Remove(item);
-        }
+        BiomesMain.Remove(Config.Instance.BiomeMainCur);
         var getted = BiomesMain[Random.Range(0, BiomesMain.Count)];
 
         Config.Instance.BiomeMainCur = getted;
         Config.Instance.BiomeMainCount = Random.Range(AssetLoader.BiomesMain[getted].countMinimum, AssetLoader.BiomesMain[getted].countMaximum + 1);
         Config.Instance.BiomeSubLast = "";
-
-        lastList.Add(getted);
-        while (lastList.Count > 1)
-        {
-            lastList.RemoveAt(0);
-        }
-        Config.Instance.BiomeMainLastList(lastList);
 
         Game.Instance.PlayMusic(getted);
 
@@ -58,5 +47,9 @@ public static class Biomes
 
         lastList.Add(getted);
         Config.Instance.BiomeSubLastList(lastList);
+
+        Game.RecalcResources();
+        AssetLoader.HandleImages();
+        AssetLoader.HandleSounds();
     }
 }

@@ -6,16 +6,16 @@ public class Block_Animator : MonoBehaviour
 {
     public static Block_Animator Instance;
 
-    [SerializeField] private Image _border;
-    [SerializeField] private Image _image;
     private ButtonPlus _buttonPlus;
     private float _currentScale = 0;
     private float _targetScale = 1;
+    [SerializeField] private Image _image;
+    [SerializeField] private Image _outline;
 
-    public void SetSprite(Sprite sprite, bool outline = true)
+    public void SetSprite(string name, bool outline)
     {
-        _image.sprite = sprite;
-        _border.enabled = outline;
+        _image.sprite = AssetLoader.Images["b_" + name];
+        _outline.enabled = outline;
         _currentScale = 0;
     }
     private void Awake()
@@ -44,6 +44,6 @@ public class Block_Animator : MonoBehaviour
     private void Update()
     {
         _currentScale = Mathf.Lerp(_currentScale, _targetScale, Time.deltaTime * 10);
-        _border.transform.localScale = Vector3.one * _currentScale;
+        _outline.transform.localScale = Vector3.one * _currentScale;
     }
 }

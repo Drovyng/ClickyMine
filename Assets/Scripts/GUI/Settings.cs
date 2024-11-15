@@ -54,6 +54,10 @@ public class Settings : MonoBehaviour
     private void Change_VolumeMusic(float arg0)
     {
         Config.Instance.music = arg0;
+        if ((int)(arg0 * 100) > 0 && AssetLoader.Music == null)
+        {
+            Game.Instance.PlayMusic(Config.Instance.BiomeMainCur);
+        }
         Game.Instance.musicSource.volume = Game.Instance.musicLerp * 0.5f * Config.Instance.music;
         _txtMusic.text = (int)(arg0 * 100) + "%";
     }
@@ -95,6 +99,21 @@ public class Settings : MonoBehaviour
     private void Change()
     {
         TargetScale = 1 - TargetScale;
+        if (TargetScale > 0.5f) return;
         Config.Save();
+        if ((int)(Config.Instance.music * 100) == 0 && AssetLoader.Music != null)
+        {
+            Game.Instance.musicSource.Stop();
+            Resources.UnloadAsset(AssetLoader.Music);
+            AssetLoader.Music = null;
+        }
+        if ((int)(Config.Instance.sound * 100) > 0)
+        {
+            AssetLoader.HandleSounds();
+        }
+        else
+        {
+            AssetLoader.UnloadSounds();
+        }
     }
 }

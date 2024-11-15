@@ -10,7 +10,6 @@ public class Config
     public Language Currentlanguage = Language.ENGLISH;
 
     public string BiomeMainCur = "overworld";
-    public string BiomeMainLast = "overworld";
     public int BiomeMainCount = 2;
 
     public string BiomeSubCur = "plains";
@@ -39,18 +38,6 @@ public class Config
     private Config() { }
 
     #region HelpfulMethods
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public List<string> BiomeMainLastList()
-    {
-        return BiomeMainLast.Split(",").ToList();
-    }
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public void BiomeMainLastList(List<string> list)
-    {
-        BiomeMainLast = "";
-        foreach (var item in list) BiomeMainLast += "," + item;
-        BiomeMainLast = BiomeMainLast[1..];
-    }
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public List<string> BiomeSubLastList()
     {
