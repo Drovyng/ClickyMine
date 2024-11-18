@@ -66,15 +66,15 @@ public static class AssetLoader
             foreach (var line in lines)
             {
                 var args = line.Replace(" ", "").Replace("\t", "").Split("|");
-                if (args.Length != 5) continue;
+                if (args.Length != 4 && args.Length != 5) continue;
                 
-                (args[1].ToLower() == "true" ? BiomesMain : BiomesSub)[args[0]] = new BiomeData()
+                (args.Length == 5 ? BiomesMain : BiomesSub)[args[0]] = new BiomeData()
                 {
                     id = args[0],
-                    isMain = args[1].ToLower() == "true",
-                    blocksOrBiomes = args[2].Split(","),
-                    countMinimum = int.Parse(args[3]),
-                    countMaximum = int.Parse(args[4])
+                    blocksOrBiomes = args[1].Split(","),
+                    countMinimum = int.Parse(args[2]),
+                    countMaximum = int.Parse(args[3]),
+                    specialItem = args.Length == 5 ? args[4] : null
                 };
             }
         }

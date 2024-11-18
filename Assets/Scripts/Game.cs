@@ -7,10 +7,13 @@ public class Game : MonoBehaviour
 {
     private const float DamageTimer = 0.1f;
     private const int SourcesCount = 20;
+    private const float SaveTimer = 2.5f;
 
     public static Game Instance;
     [SerializeField] private GameObject[] ToActivate;
     private float _damageTimer;
+    private bool _damageTimerHit;
+    private float _saveTimer = SaveTimer;
 
     private List<AudioSource> _audioSources;
     private List<AudioSource> _audioSourcesPlaying;
@@ -23,8 +26,8 @@ public class Game : MonoBehaviour
         AssetLoader.ToLoadSounds = new(1);
         foreach (var item in AssetLoader.BiomesSub[Config.Instance.BiomeSubCur].blocksOrBiomes)
         {
-            AssetLoader.ToLoadImages.Add("b_" + item);
-            AssetLoader.ToLoadImages.Add("p_" + item);
+            AssetLoader.ToLoadImages.Add("Blocks/b_" + item);
+            AssetLoader.ToLoadImages.Add("Blocks/p_" + item);
 
             var block = AssetLoader.Blocks[item];
             foreach (var snd in block.soundsTouch)
@@ -45,14 +48,15 @@ public class Game : MonoBehaviour
 
         Instance = this;
 
-        foreach (var item in ToActivate)
-        {
-            item.SetActive(true);
-        }
         AssetLoader.Init();
         RecalcResources();
         AssetLoader.HandleImages();
         AssetLoader.HandleSounds();
+
+        foreach (var item in ToActivate)
+        {
+            item.SetActive(true);
+        }
 
         Inventory.Load();
         Config.Save();
@@ -69,45 +73,81 @@ public class Game : MonoBehaviour
             _audioSources.Add(source.AddComponent<AudioSource>());
             source.transform.parent = transform;
         }
-
-#if UNITY_EDITOR
-        foreach (var item in AssetLoader.Blocks.Values)
-        {
-            /*
-            if (!AssetLoader.Images.ContainsKey("b_" + item.id)) Debug.LogError("NO IMAGE: b_" + item.id);
-            if (!AssetLoader.Images.ContainsKey("p_" + item.id)) Debug.LogError("NO IMAGE: p_" + item.id);
-            foreach (var snd in item.soundsTouch)
-            {
-                if (!AssetLoader.Sounds.ContainsKey("t_" + snd)) Debug.LogError("NO AUDIO: t_" + snd);
-            }
-            foreach (var snd in item.soundsBreak)
-            {
-                if (!AssetLoader.Sounds.ContainsKey("b_" + snd)) Debug.LogError("NO AUDIO: b_" + snd);
-            }
-            */
-            if (!Localization.Languages[Language.ENGLISH].ContainsKey("block." + item.id)) Debug.LogError("NO LANG [ENGLISH]: block." + item.id);
-            if (!Localization.Languages[Language.RUSSIAN].ContainsKey("block." + item.id)) Debug.LogError("NO LANG [RUSSIAN]: block." + item.id);
-        }
-#endif
     }
-    private void Start()
+#if UNITY_EDITOR
+    [UnityEditor.CustomEditor(typeof(Game))]
+    public class GameEditorScript : UnityEditor.Editor
     {
+        public override void OnInspectorGUI()
+        {
+            if (GUILayout.Button("Check Resources", new GUIStyle(GUI.skin.button) { fontSize = 20, fontStyle = FontStyle.Bold }))
+            {
+                Debug.Log("Checking Resources...");
+                AssetLoader.Init();
+                Localization.Init();
+                foreach (var item in AssetLoader.Blocks.Values)
+                {
+                    if (Resources.Load<Sprite>("Images/Blocks/b_" + item.id) == null) Debug.LogError("NO IMAGE: Blocks/b_" + item.id);
+                    if (Resources.Load<Sprite>("Images/Blocks/p_" + item.id) == null) Debug.LogError("NO IMAGE: Blocks/p_" + item.id);
+                    foreach (var snd in item.soundsTouch)
+                    {
+                        if (Resources.Load<AudioClip>("Sounds/t_" + snd) == null) Debug.LogError("NO AUDIO: t_" + snd);
+                    }
+                    foreach (var snd in item.soundsBreak)
+                    {
+                        if (Resources.Load<AudioClip>("Sounds/b_" + snd) == null) Debug.LogError("NO AUDIO: b_" + snd);
+                    }
+
+                    if (!Localization.Languages[Language.ENGLISH].ContainsKey("block." + item.id)) Debug.LogError("NO LANG [ENGLISH]: block." + item.id);
+                    if (!Localization.Languages[Language.RUSSIAN].ContainsKey("block." + item.id)) Debug.LogWarning("NO LANG [RUSSIAN]: block." + item.id);
+                }
+                foreach (var item in AssetLoader.BiomesMain)
+                {
+                    foreach (var sub in item.Value.blocksOrBiomes)
+                    {
+                        if (!AssetLoader.BiomesSub.ContainsKey(sub)) Debug.LogError("NO BIOME: " + sub);
+                    }
+                    if (Resources.Load<AudioClip>("Music/" + item.Key) == null) Debug.LogError("NO Music: " + item.Key);
+                }
+                foreach (var item in AssetLoader.BiomesSub)
+                {
+                    foreach (var sub in item.Value.blocksOrBiomes)
+                    {
+                        if (!AssetLoader.Blocks.ContainsKey(sub)) Debug.LogError("NO BLOCK: " + sub);
+                    }
+                    if (!AssetLoader.Backgrounds.ContainsKey(item.Key)) Debug.LogError("NO BACKGROUND: " + item.Key);
+                    if (!Localization.Languages[Language.ENGLISH].ContainsKey("biome." + item.Key)) Debug.LogError("NO LANG [ENGLISH]: biome." + item.Key);
+                    if (!Localization.Languages[Language.RUSSIAN].ContainsKey("biome." + item.Key)) Debug.LogError("NO LANG [RUSSIAN]: biome." + item.Key);
+                }
+                Debug.Log("Checking Resources Completed!!!");
+            }
+            base.OnInspectorGUI();
+        }
+    }
+#endif
+    private void Start()
+{
         Background.Change(Config.Instance.BiomeSubCur, false);
         Biome_Text.SetText(Localization.Localize("biome." + Config.Instance.BiomeSubCur));
 
-        Blocks.NewBlock();
+        Blocks.NewBlock(true);
 
         PlayMusic(Config.Instance.BiomeMainCur);
+
+        Application.quitting += Config.Save;
+        Application.unloading += Config.Save;
     }
     public void BlockClick()
     {
         if (_damageTimer > 0)
         {
+            _damageTimerHit = true;
             return;
         }
         _damageTimer = DamageTimer;
         Score_Text.Click();
         Blocks.CurrentBlockHealth -= 1;
+        Config.Instance.BlockHealth = Blocks.CurrentBlockHealth;
         if (Blocks.CurrentBlockHealth <= 0)
         {
             ParticlesGenerator.BlockBreak(Blocks.CurrentBlock.id);
@@ -121,9 +161,7 @@ public class Game : MonoBehaviour
             Inventory.Add(Blocks.CurrentBlock.id);
 
             Blocks.NewBlock();
-            _damageTimer = DamageTimer * 2;
-
-            Config.Save();
+            _damageTimer = DamageTimer * 1.5f;
             return;
         }
         ParticlesGenerator.BlockTouch(Blocks.CurrentBlock.id);
@@ -135,6 +173,17 @@ public class Game : MonoBehaviour
         if (_damageTimer > 0)
         {
             _damageTimer -= Time.fixedDeltaTime;
+            if (_damageTimer <= 0 && _damageTimerHit)
+            {
+                BlockClick();
+                _damageTimerHit = false;
+            }
+        }
+        _saveTimer -= Time.fixedDeltaTime;
+        if (_saveTimer <= 0)
+        {
+            Config.Save();
+            _saveTimer = SaveTimer;
         }
         int i = 0;
         while (i < _audioSourcesPlaying.Count)

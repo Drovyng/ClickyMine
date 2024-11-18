@@ -29,12 +29,12 @@ public class ParticlesGenerator : MonoBehaviour
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static void BlockTouch(string sprite)
     {
-        Generate(4, Vector2.zero, 200, 800, 100, 0.3f, 0.075f, "p_"+sprite);
+        Generate(4, Vector2.zero, 200, 800, 100, 0.3f, 0.075f, "Blocks/p_"+sprite);
     }
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static void BlockBreak(string sprite)
     {
-        Generate(25, Vector2.zero, 250, 1500, 200, 1.1f, 0.2f, "p_" + sprite);
+        Generate(25, Vector2.zero, 250, 1500, 200, 1.1f, 0.2f, "Blocks/p_" + sprite);
     }
     private void Awake()
     {

@@ -6,14 +6,25 @@ public static class Blocks
     public static BlockData CurrentBlock = null;
     public static int CurrentBlockHealth = 0;
     public static IReadOnlyList<BlockData> BlocksList;
-    public static void NewBlock()
+    public static void NewBlock(bool start = false)
     {
-        CurrentBlock = GetRandomBlock();
-        CurrentBlockHealth = CurrentBlock.health;
+        if (!start || Config.Instance.Block == null)
+        {
+            CurrentBlock = GetRandomBlock();
+            CurrentBlockHealth = CurrentBlock.health;
+        }
+        else
+        {
+            CurrentBlock = AssetLoader.Blocks[Config.Instance.Block];
+            CurrentBlockHealth = Config.Instance.BlockHealth;
+        }
         Block_Text.SetText(Localization.Localize("block." + CurrentBlock.id));
 
+        Config.Instance.Block = CurrentBlock.id;
+        Config.Instance.BlockHealth = CurrentBlockHealth;
+
         Block_Animator.Instance.SetSprite(CurrentBlock.id, CurrentBlock.outline);
-        Block_Health.target = 1;
+        Block_Health.target = CurrentBlockHealth / (float)CurrentBlock.health;
     }
     public static void Recalculate()
     {

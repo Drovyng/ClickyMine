@@ -4,9 +4,10 @@ using UnityEngine;
 
 public static class Localization
 {
-    public static Dictionary<Language, Dictionary<string, string>> Languages = new();
+    public static Dictionary<Language, Dictionary<string, string>> Languages;
     public static void Init()
     {
+        Languages = new();
         var count = Enum.GetNames(typeof(Language)).Length;
         for (int i = 0; i < count; i++)
         {

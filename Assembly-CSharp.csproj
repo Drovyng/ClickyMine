@@ -81,6 +81,7 @@
     <Compile Include="Assets\Scripts\GUI\Background.cs" />
     <Compile Include="Assets\Scripts\Localization.cs" />
     <Compile Include="Assets\Scripts\BlockData.cs" />
+    <Compile Include="Assets\Scripts\GUI\PanelBottom.cs" />
     <Compile Include="Assets\Scripts\Config.cs" />
     <Compile Include="Assets\Scripts\Language.cs" />
     <Compile Include="Assets\Scripts\GUI\Inventory.cs" />

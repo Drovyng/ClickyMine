@@ -15,8 +15,7 @@ public class Settings : MonoBehaviour
     [SerializeField] private Button _btnLang;
     [SerializeField] private Text _btnLangText;
 
-    [SerializeField] private Button _btnBack;
-    [SerializeField] private Text _btnBackText;
+    [SerializeField] private ButtonPlus _btnBack;
 
     [SerializeField] private Button _btnAppear;
 
@@ -37,7 +36,6 @@ public class Settings : MonoBehaviour
         _textSound.text = Localization.Localize("settings.text-sound");
 
         _btnLangText.text = Localization.Localize("settings.btn-lang");
-        _btnBackText.text = Localization.Localize("settings.btn-back");
 
         _scrMusic.value = Config.Instance.music;
         _scrSound.value = Config.Instance.sound;
@@ -45,8 +43,8 @@ public class Settings : MonoBehaviour
     private void OnEnable()
     {
         _btnLang.onClick.AddListener(ChangeLanguage);
-        _btnBack.onClick.AddListener(Change);
-        _btnAppear.onClick.AddListener(Change);
+        _btnBack.OnPress.AddListener(Hide);
+        _btnAppear.onClick.AddListener(Show);
         _scrMusic.onValueChanged.AddListener(Change_VolumeMusic);
         _scrSound.onValueChanged.AddListener(Change_VolumeSound);
     }
@@ -70,19 +68,19 @@ public class Settings : MonoBehaviour
     private void OnDisable()
     {
         _btnLang.onClick.RemoveAllListeners();
-        _btnBack.onClick.RemoveAllListeners();
+        _btnBack.OnPress.RemoveAllListeners();
         _btnAppear.onClick.RemoveAllListeners();
     }
     private void Start()
     {
-        transform.localScale = Vector3.zero;
+        _btnBack.transform.localScale = Vector3.zero;
         _textVersion.text = "v" + Application.version;
         Reload();
     }
     private void Update()
     {
         _currentScale = Mathf.Lerp(_currentScale, TargetScale, Time.deltaTime * 20);
-        transform.localScale = Vector3.one * _currentScale;
+        _btnBack.transform.localScale = Vector3.one * _currentScale;
     }
     private void ChangeLanguage()
     {
@@ -93,14 +91,17 @@ public class Settings : MonoBehaviour
         }
         Block_Text.SetText(Localization.Localize("block." + Blocks.CurrentBlock.id));
         Biome_Text.SetText(Localization.Localize("biome." + Config.Instance.BiomeSubCur));
-        Config.Save();
         Reload();
     }
-    private void Change()
+    private void Show()
     {
-        TargetScale = 1 - TargetScale;
-        if (TargetScale > 0.5f) return;
-        Config.Save();
+        TargetScale = 1;
+        Block_Text.Target = 0;
+    }
+    private void Hide()
+    {
+        TargetScale = 0;
+        Block_Text.Target = 1;
         if ((int)(Config.Instance.music * 100) == 0 && AssetLoader.Music != null)
         {
             Game.Instance.musicSource.Stop();

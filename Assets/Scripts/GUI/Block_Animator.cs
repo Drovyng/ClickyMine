@@ -14,7 +14,7 @@ public class Block_Animator : MonoBehaviour
 
     public void SetSprite(string name, bool outline)
     {
-        _image.sprite = AssetLoader.Images["b_" + name];
+        _image.sprite = AssetLoader.Images["Blocks/b_" + name];
         _outline.enabled = outline;
         _currentScale = 0;
     }

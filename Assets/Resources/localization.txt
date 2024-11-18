@@ -1,7 +1,7 @@
 # ENGLISH
 theme_name: ClickyMine
 
-inventory: Inventory
+inventory-blocks: Blocks
 
 block.grass: Grass Block
 block.short-grass: Short Grass
@@ -69,6 +69,30 @@ block.warped-nylium: Warped Nylium
 block.crimson-nylium: Crimson Nylium
 
 
+block.fire-coral: Fire Coral
+block.fire-coral-block: Fire Coral Block
+
+block.tube-coral: Tube Coral
+block.tube-coral-block: Tube Coral Block
+
+block.horn-coral: Horn Coral
+block.horn-coral-block: Horn Coral Block
+
+block.brain-coral: Brain Coral
+block.brain-coral-block: Brain Coral Block
+
+block.bubble-coral: Bubble Coral
+block.bubble-coral-block: Bubble Coral Block
+
+block.seagrass: Seagrass
+block.kelp: Kelp
+
+block.acacia-log: Acacia Log
+block.spruce-log: Spruce Log
+block.fern: Fern
+block.berry: Sweet Berry Bush
+
+
 
 biome.plains: Plains
 biome.forest: Forest
@@ -82,13 +106,22 @@ biome.soul-sand-valley: Soul Sand Valley
 biome.warped-forest: Warped Forest
 biome.crimson-forest: Crimson Forest
 
+biome.lake: Lake
+biome.cold-ocean: Cold Ocean
+biome.warmed-ocean: Warmed Ocean
+biome.island: Island
+
+biome.savanna: Savanna
+biome.taiga: Taiga
+
+
+
 settings.text-top: Settings
 settings.text-lang: Language
 settings.text-music: Music
 settings.text-sound: SFX
 
 settings.btn-lang: EN
-settings.btn-back: Back
 
 outdated.title: New Version Is Avaible!
 outdated.update: Update
@@ -96,7 +129,7 @@ outdated.skip: Skip
 
 
 # RUSSIAN
-inventory: Инвентарь
+inventory-blocks: Блоки
 
 block.grass: Дёрн
 block.short-grass: Трава
@@ -165,6 +198,30 @@ block.warped-nylium: Искажённый Нилий
 block.crimson-nylium: Багровый Нилий
 
 
+block.fire-coral: Огненный Коралл
+block.fire-coral-block: Огненный Коралловый блок
+
+block.tube-coral: Трубчатый Коралл
+block.tube-coral-block: Трубчатый Коралловый блок
+
+block.horn-coral: Роговой Коралл
+block.horn-coral-block: Роговой Коралловый блок
+
+block.brain-coral: Мозговой Коралл
+block.brain-coral-block: Мозговой Коралловый блок
+
+block.bubble-coral: Пузырчатый Коралл
+block.bubble-coral-block: Пузырчатый Коралловый блок
+
+block.seagrass: Морская Трава
+block.kelp: Ламинария
+
+block.acacia-log: Акациевое Бревно
+block.spruce-log: Еловое Бревно
+block.fern: Папоротник
+block.berry: Куст Сладких Ягод
+
+
 
 
 biome.plains: Равнины
@@ -179,6 +236,15 @@ biome.soul-sand-valley: Долина Песка Душ
 biome.warped-forest: Искажённый Лес
 biome.crimson-forest: Багровый Лес
 
+biome.lake: Озеро
+biome.cold-ocean: Холодный Океан
+biome.warmed-ocean: Тёплый Океан
+biome.island: Остров
+
+
+biome.savanna: Саванна
+biome.taiga: Тайга
+
 
 settings.text-top: Настройки
 settings.text-lang: Язык
@@ -186,7 +252,6 @@ settings.text-music: Музыка
 settings.text-sound: Звуки
 
 settings.btn-lang: RU
-settings.btn-back: Назад
 
 outdated.title: Доступна Новая Версия!
 outdated.update: Обновить

@@ -11,7 +11,12 @@ sand | 7 | 75 | sand_1, sand_2, sand_3, sand_4, sand_5 | 1 | sand_1, sand_2 | 0.
 
 oak-log | 10 | 150 | wood_1, wood_2, wood_3, wood_4, wood_5, wood_6 | 1 | wood_1, wood_2, wood_3, wood_4 | 0.8
 birch-log | 10 | 80 | wood_1, wood_2, wood_3, wood_4, wood_5, wood_6 | 1 | wood_1, wood_2, wood_3, wood_4 | 0.8
+acacia-log | 10 | 175 | wood_1, wood_2, wood_3, wood_4, wood_5, wood_6 | 1 | wood_1, wood_2, wood_3, wood_4 | 0.8
+spruce-log | 10 | 175 | wood_1, wood_2, wood_3, wood_4, wood_5, wood_6 | 1 | wood_1, wood_2, wood_3, wood_4 | 0.8
 
+
+fern (NO) | 1 | 50 | grass_1 | 0.5 | grass_1, grass_2, grass_3, grass_4 | 0.8
+berry (NO) | 1 | 25 | grass_1 | 0.5 | berry_1, berry_2, berry_3, berry_4 | 0.8
 
 
 andesite | 7 | 150 | stone_1, stone_2, stone_3, stone_4, stone_5, stone_6 | 1 | stone_1, stone_2, stone_3, stone_4 | 0.8
@@ -82,4 +87,18 @@ crimson-stem | 10 | 100 | stem_1, stem_2, stem_3, stem_4, stem_5, stem_6 | 1 | s
 warped-nylium  | 11 | 150 | nylium_1, nylium_2, nylium_3, nylium_4, nylium_5, nylium_6 | 1 | nylium_1, nylium_2, nylium_3, nylium_4, nylium_5, nylium_6 | 0.8
 crimson-nylium | 11 | 150 | nylium_1, nylium_2, nylium_3, nylium_4, nylium_5, nylium_6 | 1 | nylium_1, nylium_2, nylium_3, nylium_4, nylium_5, nylium_6 | 0.8
 
+seagrass (NO) | 1 | 100 | seagrass_1, seagrass_2, seagrass_3, seagrass_4, seagrass_5, seagrass_6 | 1 | seagrass_1, seagrass_2, seagrass_3, seagrass_4 | 0.8
+kelp (NO) | 1 | 175 | seagrass_1, seagrass_2, seagrass_3, seagrass_4, seagrass_5, seagrass_6 | 1 | seagrass_1, seagrass_2, seagrass_3, seagrass_4 | 0.8
 
+
+fire-coral (NO) | 5 | 25 | seagrass_1, seagrass_2, seagrass_3, seagrass_4, seagrass_5, seagrass_6 | 1 | seagrass_1, seagrass_2, seagrass_3, seagrass_4 | 0.8
+brain-coral (NO) | 5 | 25 | seagrass_1, seagrass_2, seagrass_3, seagrass_4, seagrass_5, seagrass_6 | 1 | seagrass_1, seagrass_2, seagrass_3, seagrass_4 | 0.8
+bubble-coral (NO) | 5 | 25 | seagrass_1, seagrass_2, seagrass_3, seagrass_4, seagrass_5, seagrass_6 | 1 | seagrass_1, seagrass_2, seagrass_3, seagrass_4 | 0.8
+tube-coral (NO) | 5 | 25 | seagrass_1, seagrass_2, seagrass_3, seagrass_4, seagrass_5, seagrass_6 | 1 | seagrass_1, seagrass_2, seagrass_3, seagrass_4 | 0.8
+horn-coral (NO) | 5 | 25 | seagrass_1, seagrass_2, seagrass_3, seagrass_4, seagrass_5, seagrass_6 | 1 | seagrass_1, seagrass_2, seagrass_3, seagrass_4 | 0.8
+
+fire-coral-block | 8 | 25 | coral_1, coral_2, coral_3, coral_4, coral_5, coral_6 | 1 | coral_1, coral_2, coral_3, coral_4 | 0.8
+brain-coral-block | 8 | 25 | coral_1, coral_2, coral_3, coral_4, coral_5, coral_6 | 1 | coral_1, coral_2, coral_3, coral_4 | 0.8
+bubble-coral-block | 8 | 25 | coral_1, coral_2, coral_3, coral_4, coral_5, coral_6 | 1 | coral_1, coral_2, coral_3, coral_4 | 0.8
+tube-coral-block | 8 | 25 | coral_1, coral_2, coral_3, coral_4, coral_5, coral_6 | 1 | coral_1, coral_2, coral_3, coral_4 | 0.8
+horn-coral-block | 8 | 25 | coral_1, coral_2, coral_3, coral_4, coral_5, coral_6 | 1 | coral_1, coral_2, coral_3, coral_4 | 0.8

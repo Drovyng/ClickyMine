@@ -9,7 +9,7 @@ public class Slot : MonoBehaviour
 
     public void SetItem(string name, long count)
     {
-        _image.sprite = AssetLoader.Images["b_" + name];
+        _image.sprite = AssetLoader.Images["Blocks/b_" + name];
         _border.enabled = AssetLoader.Blocks[name].outline;
         _text.text = count.ToString();
     }

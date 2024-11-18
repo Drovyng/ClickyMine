@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Rendering;
 using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour
@@ -10,6 +11,7 @@ public class Inventory : MonoBehaviour
     [SerializeField] private GameObject SlotPrefab;
     [SerializeField] private RectTransform Parent;
     [SerializeField] private Text _inventoryText;
+    [SerializeField] private RectTransform GridBg;
     public static void Load()
     {
         var splitted = Config.Instance.Items.Split("|");
@@ -57,14 +59,14 @@ public class Inventory : MonoBehaviour
     }
     private void Reload()
     {
-        _inventoryText.text = Localization.Localize("inventory");
+        _inventoryText.text = Localization.Localize("inventory-blocks");
         var sorted = Items.OrderBy((item) => -item.Value).ToList();
 
 
         var list = AssetLoader.ToLoadImages;
         foreach (var item in Items)
         {
-            list.Add("b_" + item.Key);
+            list.Add("Blocks/b_" + item.Key);
         }
         AssetLoader.HandleImages();
         AssetLoader.ToLoadImages = list;
@@ -78,6 +80,9 @@ public class Inventory : MonoBehaviour
             Slots[i].SetItem(sorted[i].Key, sorted[i].Value);
         }
         Parent.anchoredPosition = Vector2.zero;
+        GridBg.sizeDelta *= Vector2.right;
+        GridBg.sizeDelta += Vector2.down * (Items.Count * STEP_Y + Screen.height * 3);
+        GridBg.anchoredPosition = Vector2.up * Screen.height;
     }
 
     public static float TargetScale = 0;
@@ -89,7 +94,6 @@ public class Inventory : MonoBehaviour
         _scrollRect = GetComponentInChildren<ScrollRect>();
         _scrollRect.enabled = false;
         transform.localScale = Vector3.zero;
-        Reload();
     }
     private void Update()
     {

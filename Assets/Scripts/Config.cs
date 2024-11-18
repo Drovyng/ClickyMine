@@ -10,10 +10,14 @@ public class Config
     public Language Currentlanguage = Language.ENGLISH;
 
     public string BiomeMainCur = "overworld";
+    public string BiomeMainVisits = "overworld";
     public int BiomeMainCount = 2;
 
+    public string Block;
+    public int BlockHealth;
+
     public string BiomeSubCur = "plains";
-    public string BiomeSubLast = "plains";
+    public string BiomeSubVisits = "plains";
     public int BiomeSubCount = 50;
 
     public string Items = "";
@@ -39,16 +43,27 @@ public class Config
 
     #region HelpfulMethods
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public List<string> BiomeSubLastList()
+    public List<string> BiomeMainVisitsList()
     {
-        return BiomeSubLast.Split(",").ToList();
+        return BiomeMainVisits.Split(",").ToList();
     }
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public void BiomeSubLastList(List<string> list)
+    public void BiomeMainVisitsList(List<string> list)
     {
-        BiomeSubLast = "";
-        foreach (var item in list) BiomeSubLast += "," + item;
-        BiomeSubLast = BiomeSubLast[1..];
+        BiomeMainVisits = "";
+        foreach (var item in list) BiomeMainVisits += "," + item;
+        BiomeMainVisits = BiomeMainVisits[1..];
+    }
+    public List<string> BiomeSubVisitsList()
+    {
+        return BiomeSubVisits.Split(",").ToList();
+    }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public void BiomeSubVisitsList(List<string> list)
+    {
+        BiomeSubVisits = "";
+        foreach (var item in list) BiomeSubVisits += "," + item;
+        BiomeSubVisits = BiomeSubVisits[1..];
     }
     #endregion
 }
